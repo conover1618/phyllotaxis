@@ -21,19 +21,44 @@ def create_object_timeseries(timestamp_tuples, resolution, sliding_step=-1, star
     if end_ts != -1:
         max_ts = end_ts
     
+    series = []
     if sliding_step > -1:
-        tslen = math.ceil((max_ts + .000001 - min_ts)
+        tslen = math.ceil(max_ts + .000001 - min_ts)
+        #numbins = int( (tslen / resolution) * sliding_step) + 1
+        
         numbins = int( (tslen - resolution) / sliding_step) + 1
+        
+        #print "Max TS:\t%s" % max_ts
+        #print "Min TS:\t%s" % min_ts
+        #print "Len:\t%s" % tslen
+        #print "Step:\t%s" % sliding_step
+        #print "Res:\t%s" % resolution
+        #print "Bins:\t%s" % numbins
+        
+  
         series = [[] for i in range(numbins)]
         
         for tup in timestamp_tuples:
             ts = tup[0]
             if ts >= min_ts and ts <= max_ts:
-                binidxs = range(ts - resolution, ts + resolution, step=sliding_step)
+                mxbinidx = (ts - min_ts) - resolution 
+                
+                lower_ts = ts - resolution
+                upper_ts = ts + resolution
+                
+                if upper_ts > max_ts - resolution: 
+                    upper_ts = max_ts - resolution
+                if lower_ts < min_ts:
+                    lower_ts = min_ts           
+                
+                ts_range = range(lower_ts, upper_ts, sliding_step)
+                binidxs = [int((val - min_ts) / sliding_step) for val in ts_range]
+    
+                
                 for binidx in binidxs:
-                    series[binidx].append(tup)
-        
-        
+                    series[binidx].append(tup) 
+                    #print "Appenfing to: %s" % binidx       
+
     else:
         numbins = int(math.ceil((max_ts + .000001 - min_ts) / resolution))
         series = [[] for i in range(numbins)]
@@ -43,7 +68,11 @@ def create_object_timeseries(timestamp_tuples, resolution, sliding_step=-1, star
                 binidx = int((ts - min_ts) / resolution)
                 series[binidx].append(tup)
 
+    
     return series
+    
+
+    
 
 # Aggregate just timestamps by bin, return dict of binidx -> [timestamp_list]
 def create_timeseries(timestamps, resolution, start_ts=-1, end_ts=-1):
@@ -78,6 +107,7 @@ def create_timeseries(timestamps, resolution, start_ts=-1, end_ts=-1):
 # Aggregate timestamp/weight tuples into each bin
 def create_weighted_timeseries(timestamp_weight_tuples, resolution):
     resolution = float(resolution)
+    
     
     # Paired lists of timestamps and weights
     timestamps = [float(tup[0]) for tup in timestamp_weight_tuples]

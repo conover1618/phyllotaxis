@@ -1,7 +1,7 @@
 '''
 Created on Jan 6, 2011
 
-@author: jpr
+@author: Jacob Ratkewicz
 
 Utility for simple Python progress meters.
 '''

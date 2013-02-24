@@ -14,8 +14,8 @@ import cPickle as pickle
 import time
 import networkx as nx
 import graph_tools as gt
-from owsutils.tictoc import TicToc
-import owsutils.utils as owsutils
+from mdcutils.tictoc import TicToc
+import mdcutils.utils as owsutils
 
 # Consume the flat file containing properties for nodes and edges
 # Infer property names from column headers
@@ -101,14 +101,14 @@ class GraphFromFlatFilesFactory(object):
     This returns a graph object given a set of node prop, edge prop, and edgelist files.
      '''
      
-    def __init__(self, indir, key, directed, multiweighted):
-        self.indir = indir
+    def __init__(self, inputdir, key, directed, multiweighted):
+        self.inputdir = inputdir
         self.key = key
         self.directed = directed
         self.multiweighted = multiweighted
-        self.edgelistfile = "%s%s.edgelist" % (self.indir, self.key) 
-        self.edgepropfile = "%s%s.edgeprop" % (self.indir, self.key) 
-        self.nodepropfile = "%s%s.nodeprop" % (self.indir, self.key)
+        self.edgelistfile = "%s%s.edgelist" % (self.inputdir, self.key) 
+        self.edgepropfile = "%s%s.edgeprop" % (self.inputdir, self.key) 
+        self.nodepropfile = "%s%s.nodeprop" % (self.inputdir, self.key)
         
     def get_graph(self):
         
@@ -128,10 +128,10 @@ class GraphFromFlatFilesFactory(object):
             with TicToc("Reading Node Properties"):
                 nid_prop_val = read_properties_file(self.nodepropfile)
 
-            with TicToc("Creating EBunch"):
+            with TicToc("Creating Edge Bunch"):
                 ebunch = self.create_ebunch_from_idpropval_edgelist(eid_prop_val, edgelist)
 
-            with TicToc("Creating NBunch"):
+            with TicToc("Creating Node Bunch"):
                 nbunch = self.create_nbunch_from_idpropval(nid_prop_val)
 
             with TicToc("Adding Nodes"):

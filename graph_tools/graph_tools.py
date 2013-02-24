@@ -4,7 +4,6 @@
 graph_tools.py
 
 Created by Conover, Michael D on 2012-04-30.
-Copyright (c) 2012 Illuminati, Inc.. All rights reserved.
 
 Generic utilities for performing functions on networkx graph objects.
 """
@@ -55,7 +54,7 @@ def convert_to_multiweighted(mg, directed=False, weighted=True):
         g.node[nid] = prop_val
     return g
     
-# Vespignani's Multiscale Backbone Extraction    
+# Multiscale Backbone Extraction (thx yyahn@indiana) 
 def extract_backbone(g, alpha):
    keep_graph = nx.Graph()
    for n in g:

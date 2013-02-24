@@ -9,8 +9,8 @@ import os, sys
 import networkx as nx
 import cPickle as p
 import graph_tools as gt
-from graph_factories import GraphFromFlatFilesFactory
-from owsutils.tictoc import TicToc
+from graph_tools.graph_factories import GraphFromFlatFilesFactory
+from mdcutils.tictoc import TicToc
 
 def stats(edgelist, nid_prop_val):
     el_statuses = set()

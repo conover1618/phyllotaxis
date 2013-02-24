@@ -9,9 +9,9 @@ import os, sys
 import networkx as nx
 import cPickle as p
 import math
-import owsutils.utils as owsutils
 import time
-from owsutils.tictoc import TicToc
+import mdcutils.utils as owsutils
+from mdcutils.tictoc import TicToc
 
 def main(picklefile, resolution, slicedir):
     with TicToc("Reading pickle from: %s" % picklefile):
