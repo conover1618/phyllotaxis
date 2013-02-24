@@ -1,10 +1,7 @@
 #!/usr/bin/env python
 # encoding: utf-8
 """
-graph_slice_iterator.py
-
 Created by Conover, Michael D on 2012-05-01.
-Copyright (c) 2012 Illuminati, Inc.. All rights reserved.
 """
 
 import sys
@@ -158,6 +155,7 @@ class GraphFromFlatFilesFactory(object):
                 line = line.strip().split("\t")
 
                 if not first_line:
+                    print line
                     eid = line[0]
                     source = line[1]
                     target = line[2]
