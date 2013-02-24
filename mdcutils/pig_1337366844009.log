@@ -1,0 +1,454 @@
+Backend error message during job submission
+-------------------------------------------
+org.apache.pig.backend.executionengine.ExecException: ERROR 2118: Illegal file pattern: Expecting set closure character or end of range, or } for glob 20{11-07-25 at 11
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigInputFormat.getSplits(PigInputFormat.java:280)
+	at org.apache.hadoop.mapred.JobClient.writeNewSplits(JobClient.java:944)
+	at org.apache.hadoop.mapred.JobClient.writeSplits(JobClient.java:961)
+	at org.apache.hadoop.mapred.JobClient.access$500(JobClient.java:170)
+	at org.apache.hadoop.mapred.JobClient$2.run(JobClient.java:880)
+	at org.apache.hadoop.mapred.JobClient$2.run(JobClient.java:833)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:396)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1127)
+	at org.apache.hadoop.mapred.JobClient.submitJobInternal(JobClient.java:833)
+	at org.apache.hadoop.mapred.JobClient.submitJob(JobClient.java:807)
+	at org.apache.hadoop.mapred.jobcontrol.Job.submit(Job.java:378)
+	at org.apache.hadoop.mapred.jobcontrol.JobControl.startReadyJobs(JobControl.java:247)
+	at org.apache.hadoop.mapred.jobcontrol.JobControl.run(JobControl.java:279)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: java.io.IOException: Illegal file pattern: Expecting set closure character or end of range, or } for glob 20{11-07-25 at 11
+	at org.apache.hadoop.fs.FileSystem$GlobFilter.error(FileSystem.java:1185)
+	at org.apache.hadoop.fs.FileSystem$GlobFilter.setRegex(FileSystem.java:1170)
+	at org.apache.hadoop.fs.FileSystem$GlobFilter.<init>(FileSystem.java:1088)
+	at org.apache.hadoop.fs.FileSystem.globStatusInternal(FileSystem.java:1008)
+	at org.apache.hadoop.fs.FileSystem.globStatus(FileSystem.java:966)
+	at org.apache.hadoop.mapreduce.lib.input.FileInputFormat.listStatus(FileInputFormat.java:211)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigTextInputFormat.listStatus(PigTextInputFormat.java:36)
+	at org.apache.hadoop.mapreduce.lib.input.FileInputFormat.getSplits(FileInputFormat.java:248)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigInputFormat.getSplits(PigInputFormat.java:268)
+	... 14 more
+
+Pig Stack Trace
+---------------
+ERROR 1066: Unable to open iterator for alias tcot
+
+org.apache.pig.impl.logicalLayer.FrontendException: ERROR 1066: Unable to open iterator for alias tcot
+	at org.apache.pig.PigServer.openIterator(PigServer.java:765)
+	at org.apache.pig.tools.grunt.GruntParser.processDump(GruntParser.java:615)
+	at org.apache.pig.tools.pigscript.parser.PigScriptParser.parse(PigScriptParser.java:303)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:168)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:144)
+	at org.apache.pig.tools.grunt.Grunt.run(Grunt.java:76)
+	at org.apache.pig.Main.run(Main.java:455)
+	at org.apache.pig.Main.main(Main.java:107)
+Caused by: java.io.IOException: Job terminated with anomalous status FAILED
+	at org.apache.pig.PigServer.openIterator(PigServer.java:755)
+	... 7 more
+================================================================================
+Backend error message during job submission
+-------------------------------------------
+org.apache.pig.backend.executionengine.ExecException: ERROR 2118: Illegal file pattern: Expecting set closure character or end of range, or } for glob 20{11-07-25 at 11
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigInputFormat.getSplits(PigInputFormat.java:280)
+	at org.apache.hadoop.mapred.JobClient.writeNewSplits(JobClient.java:944)
+	at org.apache.hadoop.mapred.JobClient.writeSplits(JobClient.java:961)
+	at org.apache.hadoop.mapred.JobClient.access$500(JobClient.java:170)
+	at org.apache.hadoop.mapred.JobClient$2.run(JobClient.java:880)
+	at org.apache.hadoop.mapred.JobClient$2.run(JobClient.java:833)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:396)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1127)
+	at org.apache.hadoop.mapred.JobClient.submitJobInternal(JobClient.java:833)
+	at org.apache.hadoop.mapred.JobClient.submitJob(JobClient.java:807)
+	at org.apache.hadoop.mapred.jobcontrol.Job.submit(Job.java:378)
+	at org.apache.hadoop.mapred.jobcontrol.JobControl.startReadyJobs(JobControl.java:247)
+	at org.apache.hadoop.mapred.jobcontrol.JobControl.run(JobControl.java:279)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: java.io.IOException: Illegal file pattern: Expecting set closure character or end of range, or } for glob 20{11-07-25 at 11
+	at org.apache.hadoop.fs.FileSystem$GlobFilter.error(FileSystem.java:1185)
+	at org.apache.hadoop.fs.FileSystem$GlobFilter.setRegex(FileSystem.java:1170)
+	at org.apache.hadoop.fs.FileSystem$GlobFilter.<init>(FileSystem.java:1088)
+	at org.apache.hadoop.fs.FileSystem.globStatusInternal(FileSystem.java:1008)
+	at org.apache.hadoop.fs.FileSystem.globStatus(FileSystem.java:966)
+	at org.apache.hadoop.mapreduce.lib.input.FileInputFormat.listStatus(FileInputFormat.java:211)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigTextInputFormat.listStatus(PigTextInputFormat.java:36)
+	at org.apache.hadoop.mapreduce.lib.input.FileInputFormat.getSplits(FileInputFormat.java:248)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigInputFormat.getSplits(PigInputFormat.java:268)
+	... 14 more
+
+Pig Stack Trace
+---------------
+ERROR 1066: Unable to open iterator for alias tcot
+
+org.apache.pig.impl.logicalLayer.FrontendException: ERROR 1066: Unable to open iterator for alias tcot
+	at org.apache.pig.PigServer.openIterator(PigServer.java:765)
+	at org.apache.pig.tools.grunt.GruntParser.processDump(GruntParser.java:615)
+	at org.apache.pig.tools.pigscript.parser.PigScriptParser.parse(PigScriptParser.java:303)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:168)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:144)
+	at org.apache.pig.tools.grunt.Grunt.run(Grunt.java:76)
+	at org.apache.pig.Main.run(Main.java:455)
+	at org.apache.pig.Main.main(Main.java:107)
+Caused by: java.io.IOException: Job terminated with anomalous status FAILED
+	at org.apache.pig.PigServer.openIterator(PigServer.java:755)
+	... 7 more
+================================================================================
+Pig Stack Trace
+---------------
+ERROR 1000: Error during parsing. Encountered " "=" "= "" at line 4, column 14.
+Was expecting:
+    "if" ...
+    
+
+org.apache.pig.impl.logicalLayer.FrontendException: ERROR 1000: Error during parsing. Encountered " "=" "= "" at line 4, column 14.
+Was expecting:
+    "if" ...
+    
+	at org.apache.pig.PigServer$Graph.parseQuery(PigServer.java:1618)
+	at org.apache.pig.PigServer$Graph.registerQuery(PigServer.java:1562)
+	at org.apache.pig.PigServer.registerQuery(PigServer.java:534)
+	at org.apache.pig.tools.grunt.GruntParser.processPig(GruntParser.java:871)
+	at org.apache.pig.tools.pigscript.parser.PigScriptParser.parse(PigScriptParser.java:388)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:168)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:144)
+	at org.apache.pig.tools.grunt.Grunt.run(Grunt.java:76)
+	at org.apache.pig.Main.run(Main.java:455)
+	at org.apache.pig.Main.main(Main.java:107)
+Caused by: org.apache.pig.impl.logicalLayer.parser.ParseException: Encountered " "=" "= "" at line 4, column 14.
+Was expecting:
+    "if" ...
+    
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.generateParseException(QueryParser.java:9599)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.jj_consume_token(QueryParser.java:9475)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.SplitClause(QueryParser.java:933)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.Parse(QueryParser.java:830)
+	at org.apache.pig.impl.logicalLayer.LogicalPlanBuilder.parse(LogicalPlanBuilder.java:63)
+	at org.apache.pig.PigServer$Graph.parseQuery(PigServer.java:1612)
+	... 9 more
+================================================================================
+Pig Stack Trace
+---------------
+ERROR 1000: Error during parsing. Unrecognized alias regmatch_grp
+
+org.apache.pig.impl.logicalLayer.FrontendException: ERROR 1000: Error during parsing. Unrecognized alias regmatch_grp
+	at org.apache.pig.PigServer$Graph.parseQuery(PigServer.java:1618)
+	at org.apache.pig.PigServer$Graph.registerQuery(PigServer.java:1562)
+	at org.apache.pig.PigServer.registerQuery(PigServer.java:534)
+	at org.apache.pig.tools.grunt.GruntParser.processPig(GruntParser.java:871)
+	at org.apache.pig.tools.pigscript.parser.PigScriptParser.parse(PigScriptParser.java:388)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:168)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:144)
+	at org.apache.pig.tools.grunt.Grunt.run(Grunt.java:76)
+	at org.apache.pig.Main.run(Main.java:455)
+	at org.apache.pig.Main.main(Main.java:107)
+Caused by: org.apache.pig.impl.logicalLayer.parser.ParseException: Unrecognized alias regmatch_grp
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.Alias(QueryParser.java:1331)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.NestedExpr(QueryParser.java:1056)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.ForEachClause(QueryParser.java:3498)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.BaseExpr(QueryParser.java:1464)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.Expr(QueryParser.java:1013)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.Parse(QueryParser.java:800)
+	at org.apache.pig.impl.logicalLayer.LogicalPlanBuilder.parse(LogicalPlanBuilder.java:63)
+	at org.apache.pig.PigServer$Graph.parseQuery(PigServer.java:1612)
+	... 9 more
+================================================================================
+Pig Stack Trace
+---------------
+ERROR 1003: Unable to find an operator for alias c
+
+org.apache.pig.impl.logicalLayer.FrontendException: ERROR 1003: Unable to find an operator for alias c
+	at org.apache.pig.PigServer.openIterator(PigServer.java:732)
+	at org.apache.pig.tools.grunt.GruntParser.processDump(GruntParser.java:615)
+	at org.apache.pig.tools.pigscript.parser.PigScriptParser.parse(PigScriptParser.java:303)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:168)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:144)
+	at org.apache.pig.tools.grunt.Grunt.run(Grunt.java:76)
+	at org.apache.pig.Main.run(Main.java:455)
+	at org.apache.pig.Main.main(Main.java:107)
+================================================================================
+Pig Stack Trace
+---------------
+ERROR 1000: Error during parsing. Encountered " ";" "; "" at line 2, column 48.
+Was expecting one of:
+    "and" ...
+    "or" ...
+    "," ...
+    
+
+org.apache.pig.impl.logicalLayer.FrontendException: ERROR 1000: Error during parsing. Encountered " ";" "; "" at line 2, column 48.
+Was expecting one of:
+    "and" ...
+    "or" ...
+    "," ...
+    
+	at org.apache.pig.PigServer$Graph.parseQuery(PigServer.java:1618)
+	at org.apache.pig.PigServer$Graph.registerQuery(PigServer.java:1562)
+	at org.apache.pig.PigServer.registerQuery(PigServer.java:534)
+	at org.apache.pig.tools.grunt.GruntParser.processPig(GruntParser.java:871)
+	at org.apache.pig.tools.pigscript.parser.PigScriptParser.parse(PigScriptParser.java:388)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:168)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:144)
+	at org.apache.pig.tools.grunt.Grunt.run(Grunt.java:76)
+	at org.apache.pig.Main.run(Main.java:455)
+	at org.apache.pig.Main.main(Main.java:107)
+Caused by: org.apache.pig.impl.logicalLayer.parser.ParseException: Encountered " ";" "; "" at line 2, column 48.
+Was expecting one of:
+    "and" ...
+    "or" ...
+    "," ...
+    
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.generateParseException(QueryParser.java:9599)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.jj_consume_token(QueryParser.java:9475)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.SplitClause(QueryParser.java:931)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.Parse(QueryParser.java:830)
+	at org.apache.pig.impl.logicalLayer.LogicalPlanBuilder.parse(LogicalPlanBuilder.java:63)
+	at org.apache.pig.PigServer$Graph.parseQuery(PigServer.java:1612)
+	... 9 more
+================================================================================
+Pig Stack Trace
+---------------
+ERROR 2127: Cloning of plan failed.
+
+org.apache.pig.impl.logicalLayer.FrontendException: ERROR 1066: Unable to open iterator for alias c
+	at org.apache.pig.PigServer.openIterator(PigServer.java:765)
+	at org.apache.pig.tools.grunt.GruntParser.processDump(GruntParser.java:615)
+	at org.apache.pig.tools.pigscript.parser.PigScriptParser.parse(PigScriptParser.java:303)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:168)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:144)
+	at org.apache.pig.tools.grunt.Grunt.run(Grunt.java:76)
+	at org.apache.pig.Main.run(Main.java:455)
+	at org.apache.pig.Main.main(Main.java:107)
+Caused by: org.apache.pig.PigException: ERROR 1002: Unable to store alias c
+	at org.apache.pig.PigServer.storeEx(PigServer.java:889)
+	at org.apache.pig.PigServer.store(PigServer.java:827)
+	at org.apache.pig.PigServer.openIterator(PigServer.java:739)
+	... 7 more
+Caused by: org.apache.pig.impl.logicalLayer.FrontendException: ERROR 2127: Cloning of plan failed.
+	at org.apache.pig.PigServer.getClonedGraph(PigServer.java:543)
+	at org.apache.pig.PigServer.storeEx(PigServer.java:861)
+	... 9 more
+================================================================================
+Pig Stack Trace
+---------------
+ERROR 1000: Error during parsing. Encountered " ";" "; "" at line 2, column 48.
+Was expecting one of:
+    "and" ...
+    "or" ...
+    "," ...
+    
+
+org.apache.pig.impl.logicalLayer.FrontendException: ERROR 1000: Error during parsing. Encountered " ";" "; "" at line 2, column 48.
+Was expecting one of:
+    "and" ...
+    "or" ...
+    "," ...
+    
+	at org.apache.pig.PigServer$Graph.parseQuery(PigServer.java:1618)
+	at org.apache.pig.PigServer$Graph.registerQuery(PigServer.java:1562)
+	at org.apache.pig.PigServer.registerQuery(PigServer.java:534)
+	at org.apache.pig.tools.grunt.GruntParser.processPig(GruntParser.java:871)
+	at org.apache.pig.tools.pigscript.parser.PigScriptParser.parse(PigScriptParser.java:388)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:168)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:144)
+	at org.apache.pig.tools.grunt.Grunt.run(Grunt.java:76)
+	at org.apache.pig.Main.run(Main.java:455)
+	at org.apache.pig.Main.main(Main.java:107)
+Caused by: org.apache.pig.impl.logicalLayer.parser.ParseException: Encountered " ";" "; "" at line 2, column 48.
+Was expecting one of:
+    "and" ...
+    "or" ...
+    "," ...
+    
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.generateParseException(QueryParser.java:9599)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.jj_consume_token(QueryParser.java:9475)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.SplitClause(QueryParser.java:931)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.Parse(QueryParser.java:830)
+	at org.apache.pig.impl.logicalLayer.LogicalPlanBuilder.parse(LogicalPlanBuilder.java:63)
+	at org.apache.pig.PigServer$Graph.parseQuery(PigServer.java:1612)
+	... 9 more
+================================================================================
+Pig Stack Trace
+---------------
+ERROR 1000: Error during parsing. Lexical error at line 3, column 49.  Encountered: "s" (115), after : "\'(?i).*#p2[\\"
+
+org.apache.pig.impl.logicalLayer.parser.TokenMgrError: Lexical error at line 3, column 49.  Encountered: "s" (115), after : "\'(?i).*#p2[\\"
+	at org.apache.pig.impl.logicalLayer.parser.QueryParserTokenManager.getNextToken(QueryParserTokenManager.java:1969)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.jj_consume_token(QueryParser.java:9457)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.PUnaryCond(QueryParser.java:2310)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.PAndCond(QueryParser.java:2162)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.POrCond(QueryParser.java:2106)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.PCond(QueryParser.java:2072)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.SplitClause(QueryParser.java:934)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.Parse(QueryParser.java:830)
+	at org.apache.pig.impl.logicalLayer.LogicalPlanBuilder.parse(LogicalPlanBuilder.java:63)
+	at org.apache.pig.PigServer$Graph.parseQuery(PigServer.java:1612)
+	at org.apache.pig.PigServer$Graph.registerQuery(PigServer.java:1562)
+	at org.apache.pig.PigServer.registerQuery(PigServer.java:534)
+	at org.apache.pig.tools.grunt.GruntParser.processPig(GruntParser.java:871)
+	at org.apache.pig.tools.pigscript.parser.PigScriptParser.parse(PigScriptParser.java:388)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:168)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:144)
+	at org.apache.pig.tools.grunt.Grunt.run(Grunt.java:76)
+	at org.apache.pig.Main.run(Main.java:455)
+	at org.apache.pig.Main.main(Main.java:107)
+================================================================================
+Pig Stack Trace
+---------------
+ERROR 2127: Cloning of plan failed.
+
+org.apache.pig.impl.logicalLayer.FrontendException: ERROR 1066: Unable to open iterator for alias c_regmatch
+	at org.apache.pig.PigServer.openIterator(PigServer.java:765)
+	at org.apache.pig.tools.grunt.GruntParser.processDump(GruntParser.java:615)
+	at org.apache.pig.tools.pigscript.parser.PigScriptParser.parse(PigScriptParser.java:303)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:168)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:144)
+	at org.apache.pig.tools.grunt.Grunt.run(Grunt.java:76)
+	at org.apache.pig.Main.run(Main.java:455)
+	at org.apache.pig.Main.main(Main.java:107)
+Caused by: org.apache.pig.PigException: ERROR 1002: Unable to store alias c_regmatch
+	at org.apache.pig.PigServer.storeEx(PigServer.java:889)
+	at org.apache.pig.PigServer.store(PigServer.java:827)
+	at org.apache.pig.PigServer.openIterator(PigServer.java:739)
+	... 7 more
+Caused by: org.apache.pig.impl.logicalLayer.FrontendException: ERROR 2127: Cloning of plan failed.
+	at org.apache.pig.PigServer.getClonedGraph(PigServer.java:543)
+	at org.apache.pig.PigServer.storeEx(PigServer.java:861)
+	... 9 more
+================================================================================
+Pig Stack Trace
+---------------
+ERROR 1000: Error during parsing. Unrecognized alias whitematch
+
+org.apache.pig.impl.logicalLayer.FrontendException: ERROR 1000: Error during parsing. Unrecognized alias whitematch
+	at org.apache.pig.PigServer$Graph.parseQuery(PigServer.java:1618)
+	at org.apache.pig.PigServer$Graph.registerQuery(PigServer.java:1562)
+	at org.apache.pig.PigServer.registerQuery(PigServer.java:534)
+	at org.apache.pig.tools.grunt.GruntParser.processPig(GruntParser.java:871)
+	at org.apache.pig.tools.pigscript.parser.PigScriptParser.parse(PigScriptParser.java:388)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:168)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:144)
+	at org.apache.pig.tools.grunt.Grunt.run(Grunt.java:76)
+	at org.apache.pig.Main.run(Main.java:455)
+	at org.apache.pig.Main.main(Main.java:107)
+Caused by: org.apache.pig.impl.logicalLayer.parser.ParseException: Unrecognized alias whitematch
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.Alias(QueryParser.java:1331)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.NestedExpr(QueryParser.java:1056)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.GroupItem(QueryParser.java:2684)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.CogroupClause(QueryParser.java:2484)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.BaseExpr(QueryParser.java:1411)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.Expr(QueryParser.java:1013)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.Parse(QueryParser.java:800)
+	at org.apache.pig.impl.logicalLayer.LogicalPlanBuilder.parse(LogicalPlanBuilder.java:63)
+	at org.apache.pig.PigServer$Graph.parseQuery(PigServer.java:1612)
+	... 9 more
+================================================================================
+Pig Stack Trace
+---------------
+ERROR 1000: Error during parsing. Unrecognized alias whitematch_grp
+
+org.apache.pig.impl.logicalLayer.FrontendException: ERROR 1000: Error during parsing. Unrecognized alias whitematch_grp
+	at org.apache.pig.PigServer$Graph.parseQuery(PigServer.java:1618)
+	at org.apache.pig.PigServer$Graph.registerQuery(PigServer.java:1562)
+	at org.apache.pig.PigServer.registerQuery(PigServer.java:534)
+	at org.apache.pig.tools.grunt.GruntParser.processPig(GruntParser.java:871)
+	at org.apache.pig.tools.pigscript.parser.PigScriptParser.parse(PigScriptParser.java:388)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:168)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:144)
+	at org.apache.pig.tools.grunt.Grunt.run(Grunt.java:76)
+	at org.apache.pig.Main.run(Main.java:455)
+	at org.apache.pig.Main.main(Main.java:107)
+Caused by: org.apache.pig.impl.logicalLayer.parser.ParseException: Unrecognized alias whitematch_grp
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.Alias(QueryParser.java:1331)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.NestedExpr(QueryParser.java:1056)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.ForEachClause(QueryParser.java:3498)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.BaseExpr(QueryParser.java:1464)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.Expr(QueryParser.java:1013)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.Parse(QueryParser.java:800)
+	at org.apache.pig.impl.logicalLayer.LogicalPlanBuilder.parse(LogicalPlanBuilder.java:63)
+	at org.apache.pig.PigServer$Graph.parseQuery(PigServer.java:1612)
+	... 9 more
+================================================================================
+Pig Stack Trace
+---------------
+ERROR 1003: Unable to find an operator for alias c_whitematch
+
+org.apache.pig.impl.logicalLayer.FrontendException: ERROR 1003: Unable to find an operator for alias c_whitematch
+	at org.apache.pig.PigServer.openIterator(PigServer.java:732)
+	at org.apache.pig.tools.grunt.GruntParser.processDump(GruntParser.java:615)
+	at org.apache.pig.tools.pigscript.parser.PigScriptParser.parse(PigScriptParser.java:303)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:168)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:144)
+	at org.apache.pig.tools.grunt.Grunt.run(Grunt.java:76)
+	at org.apache.pig.Main.run(Main.java:455)
+	at org.apache.pig.Main.main(Main.java:107)
+================================================================================
+Pig Stack Trace
+---------------
+ERROR 1000: Error during parsing. Lexical error at line 3, column 49.  Encountered: "s" (115), after : "\'(?i).*#p2[\\"
+
+org.apache.pig.impl.logicalLayer.parser.TokenMgrError: Lexical error at line 3, column 49.  Encountered: "s" (115), after : "\'(?i).*#p2[\\"
+	at org.apache.pig.impl.logicalLayer.parser.QueryParserTokenManager.getNextToken(QueryParserTokenManager.java:1969)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.jj_consume_token(QueryParser.java:9457)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.PUnaryCond(QueryParser.java:2310)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.PAndCond(QueryParser.java:2162)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.POrCond(QueryParser.java:2106)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.PCond(QueryParser.java:2072)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.SplitClause(QueryParser.java:934)
+	at org.apache.pig.impl.logicalLayer.parser.QueryParser.Parse(QueryParser.java:830)
+	at org.apache.pig.impl.logicalLayer.LogicalPlanBuilder.parse(LogicalPlanBuilder.java:63)
+	at org.apache.pig.PigServer$Graph.parseQuery(PigServer.java:1612)
+	at org.apache.pig.PigServer$Graph.registerQuery(PigServer.java:1562)
+	at org.apache.pig.PigServer.registerQuery(PigServer.java:534)
+	at org.apache.pig.tools.grunt.GruntParser.processPig(GruntParser.java:871)
+	at org.apache.pig.tools.pigscript.parser.PigScriptParser.parse(PigScriptParser.java:388)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:168)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:144)
+	at org.apache.pig.tools.grunt.Grunt.run(Grunt.java:76)
+	at org.apache.pig.Main.run(Main.java:455)
+	at org.apache.pig.Main.main(Main.java:107)
+================================================================================
+Pig Stack Trace
+---------------
+ERROR 2127: Cloning of plan failed.
+
+org.apache.pig.impl.logicalLayer.FrontendException: ERROR 1066: Unable to open iterator for alias c_regmatch
+	at org.apache.pig.PigServer.openIterator(PigServer.java:765)
+	at org.apache.pig.tools.grunt.GruntParser.processDump(GruntParser.java:615)
+	at org.apache.pig.tools.pigscript.parser.PigScriptParser.parse(PigScriptParser.java:303)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:168)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:144)
+	at org.apache.pig.tools.grunt.Grunt.run(Grunt.java:76)
+	at org.apache.pig.Main.run(Main.java:455)
+	at org.apache.pig.Main.main(Main.java:107)
+Caused by: org.apache.pig.PigException: ERROR 1002: Unable to store alias c_regmatch
+	at org.apache.pig.PigServer.storeEx(PigServer.java:889)
+	at org.apache.pig.PigServer.store(PigServer.java:827)
+	at org.apache.pig.PigServer.openIterator(PigServer.java:739)
+	... 7 more
+Caused by: org.apache.pig.impl.logicalLayer.FrontendException: ERROR 2127: Cloning of plan failed.
+	at org.apache.pig.PigServer.getClonedGraph(PigServer.java:543)
+	at org.apache.pig.PigServer.storeEx(PigServer.java:861)
+	... 9 more
+================================================================================
+Pig Stack Trace
+---------------
+ERROR 2127: Cloning of plan failed.
+
+org.apache.pig.impl.logicalLayer.FrontendException: ERROR 1066: Unable to open iterator for alias c_regmatch
+	at org.apache.pig.PigServer.openIterator(PigServer.java:765)
+	at org.apache.pig.tools.grunt.GruntParser.processDump(GruntParser.java:615)
+	at org.apache.pig.tools.pigscript.parser.PigScriptParser.parse(PigScriptParser.java:303)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:168)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:144)
+	at org.apache.pig.tools.grunt.Grunt.run(Grunt.java:76)
+	at org.apache.pig.Main.run(Main.java:455)
+	at org.apache.pig.Main.main(Main.java:107)
+Caused by: org.apache.pig.PigException: ERROR 1002: Unable to store alias c_regmatch
+	at org.apache.pig.PigServer.storeEx(PigServer.java:889)
+	at org.apache.pig.PigServer.store(PigServer.java:827)
+	at org.apache.pig.PigServer.openIterator(PigServer.java:739)
+	... 7 more
+Caused by: org.apache.pig.impl.logicalLayer.FrontendException: ERROR 2127: Cloning of plan failed.
+	at org.apache.pig.PigServer.getClonedGraph(PigServer.java:543)
+	at org.apache.pig.PigServer.storeEx(PigServer.java:861)
+	... 9 more
+================================================================================
