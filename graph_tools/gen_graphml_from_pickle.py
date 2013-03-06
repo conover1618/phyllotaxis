@@ -5,7 +5,7 @@ gen_graphml_from_pickle.py
 
 Created by Conover, Michael D on 2012-05-02.
 
-This script ..
+This script generates a GraphML file for importing into Gephi from a graph_tools pickle.
 """
 
 import os, sys
@@ -28,16 +28,25 @@ if __name__ == '__main__':
     parser.add_option("-m", "--multiweighted", help="Convert multigraph to simple graph with weights determined by number of edges.", 
                     dest="multiweighted", action="store_true")       
     parser.add_option("-d", "--directed", help="Construct as directed graph.", 
-                        dest="directed", action="store_true")                                                 
+                        dest="directed", action="store_true")      
+    parser.add_option("-p", "--not_graph_tools", help="Pickle contains only graph file.", 
+                        dest="not_graph_tools", action="store_true")                                             
     options, args = parser.parse_args(sys.argv[1:])
     
     infile = options.infile
     outfile = options.outfile
     multiweighted = options.multiweighted
     directed = options.directed
-    
+    is_graph_tools = True
+
+    if not_graph_tools:
+        is_graph_tools = False
+
     dat = p.load(open(infile))
-    g = dat['graph']
+    if is_graph_tools:
+        g = dat['graph']
+    else:
+        g = dat
     
     if multiweighted:
         g = gt.convert_to_multiweighted(g, directed)

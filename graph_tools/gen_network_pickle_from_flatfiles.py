@@ -10,7 +10,7 @@ import networkx as nx
 import cPickle as p
 import graph_tools as gt
 from graph_factories import GraphFromFlatFilesFactory
-from mdcutils.tictoc import TicToc
+from phyllotaxis.mdcutils.tictoc import TicToc
 
 def stats(edgelist, nid_prop_val):
     el_statuses = set()
@@ -65,16 +65,15 @@ if __name__ == "__main__":
     parser = OptionParser()
     
     parser.add_option("-i", "--indir", help="Location of input flatfiles.", 
-                    type="str", dest="indir", default="%stwitter/ows/network/" % os.environ['ANADIR'] )                 
+                    type="str", dest="indir", default="%s/twitter/ows/network/" % os.environ['ANADIR'] )                 
     parser.add_option("-o", "--outdir", help="Location to write graph pickle.", 
-                    type="str", dest="outdir", default="%stwitter/ows/network/" % os.environ['ANADIR'] )
+                    type="str", dest="outdir", default="%s/twitter/ows/network/" % os.environ['ANADIR'] )
     parser.add_option("-k", "--key", help="Key identifier for graph flatfiles + output.", 
                     type="str", dest="key", default="ows_retweet" )   
     parser.add_option("-d", "--directed", help="Construct as directed graph.", 
                         dest="directed", action="store_true")             
     parser.add_option("-m", "--multiweighted", help="Construct as weighted graph using the number of edges between two nodes as a weighting factor.", 
                         dest="multiweighted", action="store_true")
-  
                                   
     options, args = parser.parse_args(sys.argv[1:])
     
@@ -84,6 +83,7 @@ if __name__ == "__main__":
     directed = options.directed
     multiweighted = options.multiweighted
     
+    print "Key: %s" % key
     gf = GraphFromFlatFilesFactory(indir, key, directed, multiweighted)
     g = gf.get_graph()
     

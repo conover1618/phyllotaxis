@@ -11,11 +11,12 @@ import cPickle as pickle
 import time
 import networkx as nx
 import graph_tools as gt
-from mdcutils.tictoc import TicToc
-import mdcutils.utils as owsutils
+from phyllotaxis.mdcutils.tictoc import TicToc
+import phyllotaxis.mdcutils.utils as owsutils
 
 # Consume the flat file containing properties for nodes and edges
 # Infer property names from column headers
+# This produces a dictionary as: id -> {prop -> val}
 def read_properties_file(filepath, delim="\t"):
     id_prop_val = {}
 
@@ -154,8 +155,7 @@ class GraphFromFlatFilesFactory(object):
             for line in fin:
                 line = line.strip().split("\t")
 
-                if not first_line:
-                    print line
+                if not first_line:                  
                     eid = line[0]
                     source = line[1]
                     target = line[2]
@@ -166,7 +166,6 @@ class GraphFromFlatFilesFactory(object):
                 first_line = False  
         print "Edgelist Length: %s" % len(edgelist)
         print "IDX: %s" % idx  
-        print "%s" % edgelist[-5:]
         return edgelist
 
     
